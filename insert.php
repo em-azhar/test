@@ -1,9 +1,10 @@
 <?php
-$con = mysqli_connect("localhost","root","cis", "grades"); 
+$con = mysqli_connect("localhost","root","cis", "address"); 
 
-$sql="INSERT INTO mscis (Course, Mark)
+
+$sql="INSERT INTO addressbook (FirstName, LastName, Address, City, Province, PostalCode, PhoneNumber, Email)
 VALUES
-('$_POST[course]','$_POST[mark]')";
+('$_POST[firstname]','$_POST[lastname]','$_POST[address]','$_POST[city]','$_POST[province]','$_POST[postalcode]','$_POST[phonenumber]','$_POST[email]')";
 
 if (!mysqli_query($con, $sql))
   {
@@ -16,6 +17,6 @@ mysqli_close($con)
 ?> 
 <html>
 <body>
-<a href="marks.php">Back to list of grades</a>
+<a href="address.php">Back</a>
 </body>
 </html>
